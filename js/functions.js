@@ -130,3 +130,7 @@ function onDeleteItem(event) {
     }
   }
 }
+
+export function setPageTitle(title) {
+  document.querySelector('title').innerText = title;
+};

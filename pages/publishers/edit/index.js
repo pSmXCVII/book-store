@@ -1,4 +1,4 @@
-import { showDialog } from "/js/functions.js";
+import { showDialog, setPageTitle } from "/js/functions.js";
 import { addItem, getItemById, updateItem } from "/assets/api.js";
 import renderToolbar from "/js/importToolbar.js"
 
@@ -31,5 +31,6 @@ if (id) {
   if (data) {
     document.querySelector('#name').value = data?.name;
     document.querySelector('#description').value = data?.description;
+    setPageTitle(`Editoras: ${data?.name}`);
   }
 }

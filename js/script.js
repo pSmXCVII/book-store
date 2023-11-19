@@ -34,3 +34,14 @@ function renderLayout() {
     });
 }
 window.addEventListener('load', renderLayout);
+
+
+function setPageIcon() {
+  const htmlHead = document.querySelector('head');
+  const icon = document.createElement('link');
+  icon.setAttribute('rel', 'icon');
+  icon.setAttribute('href', 'https://site-assets.fontawesome.com/releases/v6.4.2/svgs/sharp-regular/book-open.svg');
+  htmlHead.appendChild(icon);
+}
+
+window.addEventListener('load', setPageIcon);

@@ -1,4 +1,4 @@
-import { showDialog } from "/js/functions.js";
+import { showDialog, setPageTitle } from "/js/functions.js";
 import { getAllByEntity, addItem, getItemById, updateItem } from "/assets/api.js";
 import renderToolbar from "/js/importToolbar.js";
 
@@ -24,6 +24,7 @@ mountSelectOptions().then(async () => {
       document.querySelector('#name').value = data?.name;
       document.querySelector('#description').value = data?.description;
       document.querySelector('#publisherId').value = data?.publisherId;
+      setPageTitle(`Livros: ${data?.name}`);
     }
   }
 });
