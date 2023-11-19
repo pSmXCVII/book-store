@@ -14,14 +14,12 @@ function route($method, $path)
         ],
         'POST' => [
             '/api/books' => 'BooksController@store',
-            '/api/publishers' => 'PublishersController@store',
             '/api/books/update' => 'BooksController@update',
-            '/api/publishers/update' => 'PublishersController@update'
+            '/api/books/delete' => 'BooksController@delete',
+            '/api/publishers' => 'PublishersController@store',
+            '/api/publishers/update' => 'PublishersController@update',
+            '/api/publishers/delete' => 'PublishersController@delete',
         ],
-        'DELETE' => [
-            '/api/books' => 'BooksController@delete',
-            '/api/publishers' => 'PublishersController@delete'
-        ]
     ];
 
     if (isset($routes[$method][$path])) {

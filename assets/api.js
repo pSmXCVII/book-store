@@ -64,12 +64,11 @@ export function updateItem(itemId, formData, entity) {
 }
 
 export async function deleteItem(itemId, entity) {
-  const books = fetch(`${API_HOST}/${entity}?id=${itemId}`, {
-    method: 'DELETE'
+  return fetch(`${API_HOST}/${entity}/delete?id=${itemId}`, {
+    method: 'POST'
   })
     .then(response => response)
     .catch(error => {
       console.error('Ocorreu um erro na requisição: ' + error);
     });
-  return books;
-}
+};
