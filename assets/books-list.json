@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Dom Casmurro",
+    "description": "Obra-prima de Machado de Assis.",
+    "publisherId": 1
+  },
+  {
+    "id": 2,
+    "name": "Cem Anos de Solidão",
+    "description": "Escrito por Gabriel García Márquez.",
+    "publisherId": 2
+  },
+  {
+    "id": 3,
+    "name": "A Culpa é das Estrelas",
+    "description": "De John Green, emocionante e best-seller.",
+    "publisherId": 3
+  },
+  {
+    "id": 4,
+    "name": "O Pequeno Príncipe",
+    "description": "Clássico de Antoine de Saint-Exupéry.",
+    "publisherId": 4
+  },
+  {
+    "id": 5,
+    "name": "Harry Potter e a Pedra Filosofal",
+    "description": "J.K. Rowling, início da série.",
+    "publisherId": 5
+  },
+  {
+    "id": 6,
+    "name": "A Menina que Roubava Livros",
+    "description": "Markus Zusak, narrado pela Morte.",
+    "publisherId": 6
+  },
+  {
+    "id": 7,
+    "name": "O Código Da Vinci",
+    "description": "Dan Brown, mistério e conspiração.",
+    "publisherId": 7
+  },
+  {
+    "id": 8,
+    "name": "A Coragem de Ser Imperfeito",
+    "description": "Brené Brown, sobre vulnerabilidade.",
+    "publisherId": 8
+  },
+  {
+    "id": 9,
+    "name": "O Silmarillion",
+    "description": "J.R.R. Tolkien, história da Terra-média.",
+    "publisherId": 9
+  },
+  {
+    "id": 10,
+    "name": "A Origem das Espécies",
+    "description": "Charles Darwin, evolução da vida.",
+    "publisherId": 10
+  },
+  {
+    "id": 11,
+    "name": "Memórias Póstumas de Brás Cubas",
+    "description": "Machado de Assis, sátira social.",
+    "publisherId": 1
+  },
+  {
+    "id": 12,
+    "name": "Cemitério Maldito",
+    "description": "Stephen King, terror sobrenatural.",
+    "publisherId": 2
+  },
+  {
+    "id": 13,
+    "name": "Extraordinário",
+    "description": "R.J. Palacio, história de superação.",
+    "publisherId": 3
+  },
+  {
+    "id": 14,
+    "name": "O Pequeno Príncipe",
+    "description": "Edição de luxo ilustrada.",
+    "publisherId": 4
+  },
+  {
+    "id": 15,
+    "name": "Harry Potter e o Cálice de Fogo",
+    "description": "Continuação da saga.",
+    "publisherId": 5
+  },
+  {
+    "id": 16,
+    "name": "A Menina que Roubava Livros",
+    "description": "Edição especial.",
+    "publisherId": 6
+  },
+  {
+    "id": 17,
+    "name": "Anjos e Demônios",
+    "description": "Dan Brown, thriller religioso.",
+    "publisherId": 7
+  },
+  {
+    "id": 18,
+    "name": "A Coragem de Ser Imperfeito",
+    "description": "Versão de bolso.",
+    "publisherId": 8
+  },
+  {
+    "id": 19,
+    "name": "O Hobbit",
+    "description": "J.R.R. Tolkien, aventuras de Bilbo.",
+    "publisherId": 9
+  },
+  {
+    "id": 20,
+    "name": "A Origem das Espécies",
+    "description": "Edição comentada.",
+    "publisherId": 10
+  }
+]

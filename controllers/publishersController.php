@@ -16,6 +16,7 @@ class PublishersController
 
     public function listOneById($mysqli, $id)
     {
+        header('Content-Type: application/json');
         if (!is_numeric($id)) {
             http_response_code(400);
             echo json_encode(['error' => 'ID inválido.']);
@@ -41,6 +42,7 @@ class PublishersController
 
     public function listByName($mysqli, $name)
     {
+        header('Content-Type: application/json');
         if (empty($name)) {
             http_response_code(400);
             echo json_encode(['erro' => 'Nome inválido.']);
@@ -73,6 +75,7 @@ class PublishersController
 
     public function store($mysqli)
     {
+        header('Content-Type: application/json');
         if (isset($_POST['name']) && isset($_POST['description'])) {
             $name = $_POST['name'];
             $description = $_POST['description'];
@@ -80,19 +83,75 @@ class PublishersController
             $stmt = $mysqli->prepare("INSERT INTO publishers (name, description) VALUES (?, ?)");
             $stmt->bind_param('ss', $name, $description);
 
-            if ($stmt->execute()) {
-                echo json_encode(['message' => 'Editora inserida com sucesso.', 'ok' => true]);
-            } else {
-                echo json_encode(['message' => 'Falha ao inserir a editora.', 'ok' => false]);
+            try {
+                $stmt->execute();
+                $itemid = $stmt->insert_id;
+                http_response_code(201);
+                echo json_encode(['id' => $stmt->insert_id]);
+            } catch (\Throwable $th) {
+                http_response_code(500);
+                echo json_encode(['message' => 'Algum erro não esperado ocorreu. Aguarde alguns instantes e tente novamente', 'ok' => false, 'trace' => $th]);
             }
 
             $stmt->close();
         } else {
+            http_response_code(500);
             echo json_encode(['message' => 'Algum problema ocorreu. Verifique sua conexão e tente novamente']);
         }
     }
+
+    public function update($mysqli, $id)
+    {
+        header('Content-Type: application/json');
+
+        if (!is_numeric($id)) {
+            http_response_code(400);
+            echo json_encode(['error' => 'ID inválido.']);
+            return;
+        }
+
+        $stmtCheck = $mysqli->prepare("SELECT * FROM publishers WHERE id = ?");
+        $stmtCheck->bind_param('i', $id);
+        $stmtCheck->execute();
+        $resultCheck = $stmtCheck->get_result();
+
+        if ($resultCheck->num_rows === 0) {
+            http_response_code(404); // Not Found
+            echo json_encode(['erro' => 'Editora não encontrada.']);
+            return;
+        }
+
+        if (isset($_POST['name']) && isset($_POST['description'])) {
+            $name = $_POST['name'];
+            $description = $_POST['description'];
+
+            $stmt = $mysqli->prepare("UPDATE publishers SET name = ?, description = ? WHERE id = ?");
+            $stmt->bind_param('ssi', $name, $description, $id);
+
+            try {
+                $stmt->execute();
+                http_response_code(201);
+            } catch (\Throwable $th) {
+                http_response_code(500);
+                echo json_encode(['message' => 'Algum erro não esperado ocorreu. Aguarde alguns instantes e tente novamente', 'ok' => false, 'trace' => $th]);
+            }
+
+            $stmt->close();
+        } else {
+            http_response_code(500);
+            echo json_encode(['message' => 'Algum problema ocorreu. Verifique sua conexão e tente novamente']);
+        }
+    }
+
     public function delete($mysqli, $id)
     {
+        header('Content-Type: application/json');
+        if (!is_numeric($id)) {
+            http_response_code(400);
+            echo json_encode(['message' => 'ID inválido.']);
+            return;
+        }
+
         $stmt = $mysqli->prepare("DELETE FROM publishers WHERE id = ?");
         $stmt->bind_param('i', $id);
 

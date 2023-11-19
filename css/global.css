@@ -1,0 +1,286 @@
+/* resets */
+* {
+  box-sizing: border-box;
+}
+
+input, select, textarea {
+  border: 0;
+  margin: 0;
+  padding: 8px 8px;
+  border-radius: 8px;
+}
+
+h1, h2, h3, h4, h5, p, span {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+#root{
+  padding: 10px;
+  margin: 0;
+  background: #dbdbdb;
+  height: 100vh;
+}
+
+main {
+  margin: 0;
+  padding: 20px 0;
+  height: calc(90% - 60px);
+}
+
+.header-container {
+  z-index: 9;
+  min-height: 90px;
+  height: 90px;
+  background: #4c85bf;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  position: sticky;
+  top: 10px;
+}
+
+#logo {
+  max-height: 80px;
+  width: 80px;
+  display: flex;
+  align-items: center;
+}
+
+#logo img {
+  max-height: 80px;
+}
+
+#menu ul {
+  display: flex;
+  gap: 8px;
+}
+
+#menu li {
+  list-style: none;
+}
+
+#menu a {
+  text-decoration: none;
+  color: #000;
+  font-size: x-large;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: ease .8s;
+  cursor: pointer;
+}
+
+#menu a:hover:not(.active-menu) {
+  background: #08529c;
+}
+
+#menu .active-menu {
+  background: #063c73;
+  color: #fff
+}
+
+.footer-container {
+  min-height: 60px;
+  height: 60px;
+  background: #4c85bf;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+}
+
+.elevation-1 {
+  box-shadow: 7px 9px 19px -1px rgba(0,0,0,0.38);
+}
+
+button {
+  background: #0e62b5;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: ease .8s;
+  width: 100%;
+}
+
+button:hover {
+  background: #063c73;
+  box-shadow: 7px 9px 19px -1px rgba(0,0,0,0.38);
+}
+
+.content-header {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 24px;
+  margin: 16px 0;
+  align-items: center;
+}
+
+/* Styles */
+.danger {
+  background: #b61111;
+  color: #fff;
+}
+
+.danger:hover {
+  background: #850c0c;
+}
+
+.success {
+  background: #038329;
+  color: #fff;
+}
+
+.btn {
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 8px;
+  text-decoration: none;
+}
+
+.success:hover {
+  background: #025f1e;
+}
+
+
+.form-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 40px;
+  max-height: 40px;
+  justify-content: flex-end;
+  margin-right: 8px;
+}
+
+.form-container input {
+  border-radius: 8px 0 0 8px;
+  font-size: larger;
+  border: 0;
+  outline: none;
+}
+
+.form-container button {
+  height: 40px;
+  border-radius: 0 8px 8px 0;
+  font-size: larger;
+  border: none;
+  padding: 0 16px;
+  cursor: pointer;
+  transition: all .3s;
+  max-width: 100px;
+}
+
+.items-list {
+  display: flex;
+  gap: 16px;
+  margin: 20px 5px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 16px;
+  position: relative;
+  border-radius: 12px;
+  background: #8bbff3;
+  padding: 16px;
+  justify-content: space-between;
+  width: 28%;
+  max-width: 290px;
+}
+
+.card-container:hover {
+  box-shadow: 7px 9px 19px -1px rgba(0, 0, 0, 0.418);
+  transition: all .5s;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-description {
+  text-align: center;
+  background: #97c2eb;
+  padding: 8px 4px;
+  border-radius: 8px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex.center {
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.toolbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.toolbar button {
+  font-size: 18px;
+}
+
+
+/* Dialog */
+.dialog-backdrop {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background: #4c85bf61;
+  z-index: 99;
+}
+
+.dialog-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding: 16px;
+  min-width: 300px;
+  min-height: 140px;
+  gap: 8px;
+  background: #8bbff3;
+  border-radius: 16px;
+  box-shadow: 7px 9px 19px -1px rgba(0, 0, 0, 0.418);
+  transition: all .8s ease-out;
+}
+
+.dialog-content {
+  flex: 1;
+}
+
+.dialog-footer {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+}

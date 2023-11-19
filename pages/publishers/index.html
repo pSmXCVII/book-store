@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Editoras</title>
+    <link rel="stylesheet" href="/css/global.css" />
+  </head>
+  <body id="root">
+    <header class="header-container"></header>
+    <main>
+      <div class="content-header">
+        <h1>Lista de editoras disponíveis</h1>
+        <a class="btn success" href="edit">Cadastrar</a>
+      </div>
+      <form method="get" id="search-form">
+        <div class="form-container">
+          <input
+            id="search"
+            name="search"
+            placeholder="O que deseja buscar..."
+          />
+          <button>Buscar</button>
+        </div>
+      </form>
+      <div class="items-list"></div>
+    </main>
+    <footer class="footer-container"></footer>
+    <script src="/js/script.js" type="module"></script>
+    <script src="index.js" type="module"></script>
+  </body>
+</html>

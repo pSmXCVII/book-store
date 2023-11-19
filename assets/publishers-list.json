@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "Editora Companhia das Letras",
+    "description": "Uma das maiores editoras do Brasil."
+  },
+  {
+    "id": 2,
+    "name": "Editora Record",
+    "description": "Publica diversos gêneros literários."
+  },
+  {
+    "id": 3,
+    "name": "Editora Intrínseca",
+    "description": "Especializada em livros de ficção."
+  },
+  {
+    "id": 4,
+    "name": "Editora Globo",
+    "description": "Parte do Grupo Globo e publica best-sellers."
+  },
+  {
+    "id": 5,
+    "name": "Editora Rocco",
+    "description": "Conhecida por lançar a série Harry Potter no Brasil."
+  },
+  {
+    "id": 6,
+    "name": "Editora Leya",
+    "description": "Publica autores nacionais e internacionais."
+  },
+  {
+    "id": 7,
+    "name": "Editora Arqueiro",
+    "description": "Especializada em romances e suspense."
+  },
+  {
+    "id": 8,
+    "name": "Editora HarperCollins",
+    "description": "Parte de uma grande editora global."
+  },
+  {
+    "id": 9,
+    "name": "Editora Novo Século",
+    "description": "Foco em autores nacionais e literatura fantástica."
+  },
+  {
+    "id": 10,
+    "name": "Editora Zahar",
+    "description": "Especializada em edições de qualidade e cultura."
+  }
+]

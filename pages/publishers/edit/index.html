@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editora: cadastro</title>
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/form.css" />
+  </head>
+  <body id="root">
+    <header class="header-container"></header>
+    <main>
+      <h1>Cadastro de editoras</h1>
+      <form method="post" class="form" id="publishers-form">
+        <div class="flex center">
+          <input type="text" name="name" id="name" placeholder="Nome" />
+        </div>
+        <div class="flex center text-area-container">
+          <textarea
+            name="description"
+            id="description"
+            placeholder="Descrição"
+            class="text-area"
+            rows="3"
+          ></textarea>
+        </div>
+      </form>
+    </main>
+    <footer class="footer-container"></footer>
+    <script type="module" src="/js/script.js"></script>
+    <script src="index.js" type="module"></script>
+  </body>
+</html>

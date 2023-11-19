@@ -1,0 +1,12 @@
+main h1 {
+  margin-bottom: 16px;
+}
+
+#books-list, #publishers-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  margin-bottom: 16px;
+  gap: 16px;
+}
