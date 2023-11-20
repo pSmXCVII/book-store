@@ -11,18 +11,23 @@ const id = urlParams.get('id');
 document.addEventListener('submit', async (event) => {
   event.preventDefault();
   const formData = new FormData(form);
-  let response;
   if (!id) {
-    response = await (await addItem(formData, 'publishers'));
+    const response = await (await addItem(formData, 'publishers'));
+    const json = (await response.json());
+    if (response.ok) {
+      showDialog({ title: 'Cadastrado com sucesso', message: 'Deseja permanecer com o cadastro aberto?' }, [
+        { label: 'Fechar cadastro', variant: 'danger', onclick: () => location.replace('../') },
+        { label: 'Permanecer', variant: 'primary', onclick: () => location.replace(`?id=${json.id}`) }
+      ]);
+    }
   } else {
-    response = await (await updateItem(id, formData, 'publishers'));
-  }
-  const json = (await response.json());
-  if (response.ok) {
-    showDialog({ title: !id ? 'Cadastrado com sucesso' : 'Alterado com sucesso', message: 'Deseja permanecer com o cadastro aberto?' }, [
-      { label: 'Fechar cadastro', variant: 'danger', onclick: () => location.replace('../') },
-      { label: 'Permanecer', variant: 'primary', onclick: () => location.replace(`?id=${json.id}`) }
-    ]);
+    const response = await (await updateItem(id, formData, 'publishers'));
+    if (response.ok) {
+      showDialog({ title: 'Alterado com sucesso', message: 'Deseja permanecer com o cadastro aberto?' }, [
+        { label: 'Fechar cadastro', variant: 'danger', onclick: () => location.replace('../') },
+        { label: 'Permanecer', variant: 'primary' }
+      ]);
+    }
   }
 });
 

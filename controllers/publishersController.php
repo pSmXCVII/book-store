@@ -116,7 +116,7 @@ class PublishersController
         $resultCheck = $stmtCheck->get_result();
 
         if ($resultCheck->num_rows === 0) {
-            http_response_code(404); // Not Found
+            http_response_code(404);
             echo json_encode(['erro' => 'Editora não encontrada.']);
             return;
         }
