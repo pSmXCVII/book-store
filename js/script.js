@@ -18,7 +18,15 @@ function renderLayout() {
     .then(data => {
       headerContainer.innerHTML = data;
     })
-    .then(() => checkActiveMenu())
+    .then(() => {
+      const menuIcon = document.querySelector('#hamburguer');
+      const navList = document.querySelector('#menu ul');
+
+      menuIcon.addEventListener('click', function () {
+        navList.classList.toggle('show');
+      });
+      checkActiveMenu();
+    })
     .catch(error => {
       console.error('Ocorreu um erro ao carregar o arquivo HTML: ' + error);
     });

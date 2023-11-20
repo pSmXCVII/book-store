@@ -16,6 +16,16 @@ h1, h2, h3, h4, h5, p, span {
   padding: 0;
 }
 
+ul {
+  display: block;
+  list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
+}
+
 #root{
   padding: 10px;
   margin: 0;
@@ -41,6 +51,7 @@ main {
   padding: 5px 10px;
   position: sticky;
   top: 10px;
+  box-shadow: 7px 9px 19px -1px rgba(0,0,0,0.38);
 }
 
 #logo {
@@ -74,12 +85,17 @@ main {
 }
 
 #menu a:hover:not(.active-menu) {
-  background: #08529c;
+  color: #fff
 }
 
 #menu .active-menu {
   background: #063c73;
   color: #fff
+}
+
+#hamburguer {
+  display: none;
+  font-size: 20px;
 }
 
 .footer-container {
@@ -283,4 +299,39 @@ button:hover {
   display: flex;
   flex-wrap: nowrap;
   gap: 8px;
+}
+
+@media screen and (max-width: 500px) {
+  #hamburguer {
+    display: block;
+  }
+
+  #menu ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #4c85bf;
+    text-align: center;
+    margin-top: 21px;
+    border-radius: 0 0 8px 8px;
+    align-items: stretch;
+    padding: 8px;
+  }
+
+  #menu ul.show {
+    display: flex;
+  }
+
+  #menu li {
+    display: flex;
+    gap: 8px;
+  }
+
+  #menu li a {
+    width: 100%;
+  }
+
 }
