@@ -49,7 +49,6 @@ ul {
 /* Styleguide */
 
 #root{
-  padding: 10px;
   margin: 0;
   background: var(--bg-neutral);
   height: 100vh;
@@ -57,8 +56,8 @@ ul {
 
 main {
   margin: 0;
-  padding: 20px 0;
-  height: calc(90% - 60px);
+  padding: 20px;
+  min-height: calc(90% - 60px);
 }
 
 .header-container {
@@ -66,13 +65,13 @@ main {
   min-height: 90px;
   height: 90px;
   background: var(--bg-primary-light);
-  border-radius: 12px;
+  border-radius: 0 0 12px 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 5px 10px;
   position: sticky;
-  top: 10px;
+  top: 0px;
   box-shadow: var(--shadow-card);
 }
 
@@ -122,10 +121,9 @@ main {
 }
 
 .footer-container {
-  min-height: 60px;
-  height: 60px;
+  height: 65px;
   background: var(--bg-primary-light);
-  border-radius: 12px;
+  border-radius: 12px 12px 0 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -235,6 +233,7 @@ button:hover {
   justify-content: space-between;
   width: 28%;
   max-width: 290px;
+  min-width: 227px;
 }
 
 .card-container:hover {
@@ -356,4 +355,39 @@ button:hover {
     width: 100%;
   }
 
+  .form-container {
+    justify-content: normal;
+  }
+
+  .form-container input {
+    flex: 1;
+  }
+
+  .content-header {
+    justify-content: normal;
+    margin: 12px 0;
+  }
+
+  .content-header h1 {
+    flex: 1;
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 378px) {
+  .form-container {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 538px) {
+  .items-list {
+    flex-direction: column;
+    align-items: stretch
+  }
+
+  .card-container {
+    width: 100%;
+    max-width: unset;
+  }
 }

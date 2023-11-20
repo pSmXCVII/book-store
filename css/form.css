@@ -30,3 +30,9 @@
   
 }
 
+
+@media screen and (max-width: 720px) {
+  .form .flex {
+    flex-direction: column;
+  }
+}
