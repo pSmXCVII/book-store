@@ -25,11 +25,33 @@ ul {
   margin-inline-end: 0;
   padding-inline-start: 0;
 }
+/* resets */
+
+/* Styleguide */
+:root {
+  --bg-primary-darker: #063c73;
+  --bg-primary-main: #0e62b5;
+  --bg-primary-light: #4c85bf;
+  --bg-primary-lighter: #7db2e3;
+  --bg-danger-darker: #850c0c;
+  --bg-danger-main: #b61111;
+  --bg-success-darker: #025f1e;
+  --bg-success-main: #038329;
+  --bg-neutral: #dbdbdb;
+
+  --text-black: #000;
+  --text-white: #fff;
+  --text-primary: #333;
+  --text-secondary: #def;
+
+  --shadow-card: 7px 9px 19px -1px rgba(0,0,0,0.38);
+}
+/* Styleguide */
 
 #root{
   padding: 10px;
   margin: 0;
-  background: #dbdbdb;
+  background: var(--bg-neutral);
   height: 100vh;
 }
 
@@ -43,7 +65,7 @@ main {
   z-index: 9;
   min-height: 90px;
   height: 90px;
-  background: #4c85bf;
+  background: var(--bg-primary-light);
   border-radius: 12px;
   display: flex;
   justify-content: space-between;
@@ -51,7 +73,7 @@ main {
   padding: 5px 10px;
   position: sticky;
   top: 10px;
-  box-shadow: 7px 9px 19px -1px rgba(0,0,0,0.38);
+  box-shadow: var(--shadow-card);
 }
 
 #logo {
@@ -76,7 +98,7 @@ main {
 
 #menu a {
   text-decoration: none;
-  color: #000;
+  color: var(--text-black);
   font-size: x-large;
   padding: 8px 16px;
   border-radius: 8px;
@@ -85,11 +107,12 @@ main {
 }
 
 #menu a:hover:not(.active-menu) {
+  background: var(--bg-primary-main);
   color: #fff
 }
 
 #menu .active-menu {
-  background: #063c73;
+  background: var(--bg-primary-darker);
   color: #fff
 }
 
@@ -101,7 +124,7 @@ main {
 .footer-container {
   min-height: 60px;
   height: 60px;
-  background: #4c85bf;
+  background: var(--bg-primary-light);
   border-radius: 12px;
   display: flex;
   justify-content: space-between;
@@ -110,12 +133,12 @@ main {
 }
 
 .elevation-1 {
-  box-shadow: 7px 9px 19px -1px rgba(0,0,0,0.38);
+  box-shadow: var(--shadow-card);
 }
 
 button {
-  background: #0e62b5;
-  color: #fff;
+  background: var(--bg-primary-main);
+  color: var(--text-white);
   border: 0;
   padding: 8px;
   border-radius: 8px;
@@ -125,8 +148,8 @@ button {
 }
 
 button:hover {
-  background: #063c73;
-  box-shadow: 7px 9px 19px -1px rgba(0,0,0,0.38);
+  background: var(--bg-primary-darker);
+  box-shadow: var(--shadow-card);
 }
 
 .content-header {
@@ -139,29 +162,28 @@ button:hover {
 }
 
 /* Styles */
-.danger {
-  background: #b61111;
-  color: #fff;
-}
-
-.danger:hover {
-  background: #850c0c;
-}
-
-.success {
-  background: #038329;
-  color: #fff;
-}
-
 .btn {
   border-radius: 8px;
   cursor: pointer;
   padding: 8px;
   text-decoration: none;
 }
+.danger {
+  background: var(--bg-danger-main);
+  color: #fff;
+}
+
+.danger:hover {
+  background: var(--bg-danger-darker);
+}
+
+.success {
+  background: var(--bg-success-main);
+  color: #fff;
+}
 
 .success:hover {
-  background: #025f1e;
+  background: var(--bg-success-darker);
 }
 
 
@@ -208,7 +230,7 @@ button:hover {
   gap: 16px;
   position: relative;
   border-radius: 12px;
-  background: #8bbff3;
+  background: var(--bg-primary-lighter);
   padding: 16px;
   justify-content: space-between;
   width: 28%;
@@ -216,7 +238,7 @@ button:hover {
 }
 
 .card-container:hover {
-  box-shadow: 7px 9px 19px -1px rgba(0, 0, 0, 0.418);
+  box-shadow: var(--shadow-card);
   transition: all .5s;
 }
 
@@ -228,7 +250,7 @@ button:hover {
 
 .card-description {
   text-align: center;
-  background: #97c2eb;
+  background: var(--bg-primary-light);
   padding: 8px 4px;
   border-radius: 8px;
 }
@@ -285,9 +307,9 @@ button:hover {
   min-width: 300px;
   min-height: 140px;
   gap: 8px;
-  background: #8bbff3;
+  background: var(--bg-primary-lighter);
   border-radius: 16px;
-  box-shadow: 7px 9px 19px -1px rgba(0, 0, 0, 0.418);
+  box-shadow: var(--shadow-card);
   transition: all .8s ease-out;
 }
 
@@ -313,7 +335,7 @@ button:hover {
     position: absolute;
     top: 60px;
     left: 0;
-    background-color: #4c85bf;
+    background-color: var(--bg-primary-light);
     text-align: center;
     margin-top: 21px;
     border-radius: 0 0 8px 8px;
