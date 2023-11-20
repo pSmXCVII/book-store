@@ -4,7 +4,7 @@ class PublishersController
 {
     public function index($mysqli)
     {
-        $result = $mysqli->query("SELECT * FROM publishers");
+        $result = $mysqli->query("SELECT * FROM publishers ORDER BY name");
         $publishers = [];
 
         while ($row = $result->fetch_assoc()) {
@@ -49,7 +49,7 @@ class PublishersController
             return;
         }
 
-        $stmt = $mysqli->prepare("SELECT * FROM publishers WHERE name LIKE ?");
+        $stmt = $mysqli->prepare("SELECT * FROM publishers WHERE name LIKE ? ORDER BY name");
         $paramName = "%" . $name . "%";
         $stmt->bind_param('s', $paramName);
 

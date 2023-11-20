@@ -5,7 +5,7 @@ class BooksController
     public function index($mysqli)
     {
         header('Content-Type: application/json');
-        $result = $mysqli->query("SELECT b.id, b.name, b.description, p.id as 'publisherId', p.name as 'publisherName' FROM books b JOIN publishers p ON b.publisherId = p.id");
+        $result = $mysqli->query("SELECT b.id, b.name, b.description, p.id as 'publisherId', p.name as 'publisherName' FROM books b JOIN publishers p ON b.publisherId = p.id ORDER BY b.name");
         $books = [];
 
         while ($row = $result->fetch_assoc()) {
@@ -57,7 +57,7 @@ class BooksController
             return;
         }
 
-        $stmt = $mysqli->prepare("SELECT b.id, b.name, b.description, p.id as 'publisherId', p.name as 'publisherName' FROM books b JOIN publishers p ON b.publisherId = p.id WHERE b.name LIKE ? OR p.name LIKE ? OR b.description LIKE ?");
+        $stmt = $mysqli->prepare("SELECT b.id, b.name, b.description, p.id as 'publisherId', p.name as 'publisherName' FROM books b JOIN publishers p ON b.publisherId = p.id WHERE b.name LIKE ? OR p.name LIKE ? OR b.description LIKE ? ORDER BY b.name");
         $paramName = "%" . $name . "%";
         $stmt->bind_param('sss', $paramName, $paramName, $paramName);
 
