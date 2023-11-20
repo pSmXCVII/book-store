@@ -241,6 +241,10 @@ button:hover {
   transition: all .5s;
 }
 
+.card-header {
+  text-align: center;
+}
+
 .card-content {
   display: flex;
   flex-direction: column;
