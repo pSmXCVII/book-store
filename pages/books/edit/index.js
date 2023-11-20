@@ -24,7 +24,7 @@ mountSelectOptions().then(async () => {
       document.querySelector('#name').value = data?.name;
       document.querySelector('#description').value = data?.description;
       document.querySelector('#publisherId').value = data?.publisherId;
-      setPageTitle(`Livros: ${data?.name}`);
+      setPageTitle(`Acervos: ${data?.name}`);
     }
   }
 });

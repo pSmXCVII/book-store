@@ -65,7 +65,7 @@ class BooksController
 
         if (!$result) {
             http_response_code(500);
-            echo json_encode(['message' => 'Erro interno ao buscar livros pelo nome.', 'ok' => false]);
+            echo json_encode(['message' => 'Erro interno ao buscar acervo pelo nome.', 'ok' => false]);
             return;
         }
 
@@ -105,7 +105,7 @@ class BooksController
                 http_response_code(201);
                 echo json_encode(['id' => $stmt->insert_id]);
             } else {
-                echo json_encode(['message' => 'Falha ao inserir o livro.', 'ok' => false]);
+                echo json_encode(['message' => 'Falha ao inserir o acervo.', 'ok' => false]);
             }
 
             $stmt->close();
@@ -131,7 +131,7 @@ class BooksController
 
         if ($resultCheck->num_rows === 0) {
             http_response_code(404);
-            echo json_encode(['erro' => 'Livro não encontrado.']);
+            echo json_encode(['erro' => 'Acervo não encontrado.']);
             return;
         }
 
