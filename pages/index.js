@@ -28,7 +28,7 @@ function renderMainSections() {
   `;
 
   getByQuery(lastBooksQuery).then(books => {
-    const booksObj = books.map(book => ({
+    const booksObj = books?.map(book => ({
       id: book.id,
       name: book.name,
       description: book.description,
