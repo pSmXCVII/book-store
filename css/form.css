@@ -32,6 +32,9 @@
 
 
 @media screen and (max-width: 720px) {
+  main h1 {
+    font-size: x-large;
+  }
   .form .flex {
     flex-direction: column;
   }
