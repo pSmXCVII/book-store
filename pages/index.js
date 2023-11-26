@@ -16,6 +16,7 @@ function renderMainSections() {
     SELECT
       p.id,
       p.name,
+      p.description
       COUNT(b.id) AS booksCount
     FROM publishers p
     LEFT JOIN books b
