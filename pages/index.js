@@ -9,7 +9,7 @@ function renderMainSections() {
     JOIN publishers p
       ON b.publisherId = p.id
     ORDER BY b.createdAt
-    LIMIT 10
+    LIMIT 6
   `;
 
   const topPublishersQuery = `
@@ -24,7 +24,7 @@ function renderMainSections() {
       p.id, p.name
     ORDER BY
       booksCount DESC
-    LIMIT 10
+    LIMIT 6
   `;
 
   getByQuery(lastBooksQuery).then(books => {
