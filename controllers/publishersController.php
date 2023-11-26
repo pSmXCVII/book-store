@@ -4,6 +4,8 @@ class PublishersController
 {
   public function index($mysqli)
   {
+    header('Content-Type: application/json');
+
     $result = $mysqli->query("SELECT * FROM publishers ORDER BY name");
     $publishers = [];
 
