@@ -15,8 +15,8 @@ CREATE TABLE `books` (
   `createdAt` timestamp NOT NULL DEFAULT current_timestamp (),
   `updatedAt` timestamp NOT NULL DEFAULT current_timestamp (),
   PRIMARY KEY (`id`),
-  KEY `fk_editora_acervo` (`publisherId`),
-  CONSTRAINT `fk_editora_acervo` FOREIGN KEY (`publisherId`) REFERENCES `publishers` (`id`)
+  KEY `fk_publisher_book` (`publisherId`),
+  CONSTRAINT `fk_publisher_book` FOREIGN KEY (`publisherId`) REFERENCES `publishers` (`id`)
 );
 
 INSERT INTO
